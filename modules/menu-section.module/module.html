@@ -1,0 +1,12 @@
+{% import '../../tools/menu-macros.html' %}
+
+{% require_css %}
+<style>
+{% include '../../css/components/_menu-section.css' %}
+</style>
+{% end_require_css %}
+
+{# Main navigation wrapper #}
+<nav aria-label="Main menu" class="navigation-primary">
+  {{ renderNavigation(menu(module.primary_menu_field)) }}
+</nav>

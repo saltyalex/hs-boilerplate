@@ -1,0 +1,12 @@
+{% set colors = {
+  'colorName1' : '#hexval',
+  'white' : '#FFFFFF',
+  'black' : '#000000'
+ } %}
+
+
+:root {
+{% for name, color in colors.items() %}
+  --c-{{ name }}:{{ color }};
+{% endfor %}
+}

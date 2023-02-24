@@ -1,0 +1,123 @@
+{% import '../../tools/menu-macros.html' %}
+
+{% require_css %}
+<style>
+{% include '../../css/components/_menu-section.css' %}
+{% include '../../css/components/_megamenu-section.css' %}
+</style>
+{% end_require_css %}
+
+{# Mega menu item macro #}
+{% macro link(node) %}
+  {% set nodeIndex = loop.index %}
+  <li {{ childClasses() if node.children else defaultItemClasses() }}>
+    <a href="{{ node.url if node.url else 'javascript:;' }}" data-mm-item="{{ loop.index }}" class="menu-link" {{ activeBranch() if node.activeBranch }} {{ activeNode() if node.activeNode }} {{ linkTarget() if node.linkTarget }}>{{ node.label }}</a>
+
+    {% if node.children %}
+      <input type="checkbox" id="{{ node.label }}" class="submenu-toggle">
+      <label class="menu-arrow" for="{{ node.label }}">
+        <span class="menu-arrow-bg"></span>
+      </label>
+      {{ renderNavigation(node) }}
+    {% endif %}
+
+    {% for megaGroup in module.mega_group %}
+    {% if loop.index == nodeIndex %}
+    <div class="mm-submenu-item">
+      <div class="row">
+      {% for column in megaGroup.menu_column %}
+
+        {% if column.content_type  == 'menu' %}
+        <div class="col-12 col-sm order-md-last mm-submenu-item__menu-column">
+        {% for group in column.menu_group %}
+          {% if group.title_link %}
+            {% set tag = 'a' %}
+          {% else %}
+            {% set tag = 'div' %}
+          {% endif %}
+          <{{ tag }} class="mm__column-title" {% if group.title_link %} href="{{ page_by_id(group.title_link) }}"{% endif %}data-group="{{ group.page }}">{{ group.title }}</{{ tag }}>
+
+
+          <ul class="mm__menu-list">
+          {% for pg in group.page %}
+            {% set pageID = page_by_id(pg) %}
+            <li>
+              <a href="{{ pageID.absolute_url }}">
+                {% if pageID.widgets.page_icon.body.src %}<span class="mm__menu-list__icon-wrap"><img src="{{ pageID.widgets.page_icon.body.src }}"></span>{% endif %}{{ pageID.name }}
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        
+          {% for testItem in group.data_nesting %}
+            {{ testItem.testing_field }}
+            {{ testItem.second_field }}
+            {{ testItem.third_test }}
+          {% endfor %}
+        {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if column.content_type  == 'blog' %}
+        <div class="col-12 col-sm-5 mm-submenu-item__blog-column">
+          <div class="mm__column-title">From the Blog</div>
+          <ul class="mm__rec-posts">
+          {% set menuRecentPosts = blog_recent_posts(column.menu_blog.blog_feed, 2) %}
+          {% for post in menuRecentPosts %}
+            <li class="mm__rec-posts__item">
+              <a class="mm__rec-posts__item__link" href="{{ post.absolute_url }}">
+                <img class="mm__rec-posts__item__image" src="{{ post.featured_image }}">
+                <span class="mm__rec-posts__item__title">{{ post.name }}</span>
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+          <a class="mm-submenu-item__blog-column__all-posts" href="{{ blog_by_id(column.menu_blog.blog_feed).absolute_url }}">See All Blog Posts</a>
+        </div>
+        {% endif %}
+
+        {% if column.content_type  == 'cta' %}
+        <div class="col-12 col-sm">
+          <div class="mm__column-title">{{ column.menu_cta.type }}</div>
+          {% set href = column.menu_cta.link.url.href %}
+          {% if column.menu_cta.link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}
+          {% set rel = [] %}
+          {% if column.menu_cta.no_follow %}
+            {% do rel.append("nofollow") %}
+          {% endif %}
+          {% if column.menu_cta.open_in_new_tab %}
+            {% do rel.append("noopener") %}
+          {% endif %}
+          <a class="mm__cta-wrap" href="{{ href }}"
+            {% if column.menu_cta.link.open_in_new_tab %}target="_blank"{% endif %}
+            {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+            >
+          {% if column.menu_cta.image.src %}
+            {% set sizeAttrs = 'width="{{ column.menu_cta.image.width }}" height="{{ column.menu_cta.image.height }}"' %}
+            {% if column.menu_cta.image.size_type == 'auto' %}
+              {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+            {% elif column.menu_cta.image.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ column.menu_cta.image.max_width }}px; max-height: {{ column.menu_cta.image.max_height }}px"' %}
+            {% endif %}
+            <img class="mm__cta_image" src="{{ column.menu_cta.image.src }}" alt="{{ column.menu_cta.image.alt }}" {{ sizeAttrs }}>
+          {% endif %}
+            <div class="mm__cta_title-text">{{ column.menu_cta.title }}</div>
+            <div class="mm__cta_link-text">{{ column.menu_cta.link_text }}</div>
+          </a>
+        </div>
+        {% endif %}
+
+      {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </li>
+{% endmacro %}
+
+{# Main navigation wrapper #}
+<nav aria-label="Main menu" class="navigation-primary has-mega-menu">
+  {{ renderNavigation(menu(module.primary_menu_field)) }}
+</nav>

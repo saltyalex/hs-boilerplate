@@ -1,0 +1,68 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: blog post
+  screenshotPath: ../images/template-previews/blog-index.png
+-->
+{% extends './layouts/base.html' %}
+
+{# This macro is used to format each recent post card and gets passed to the related_blog_posts HubL tag below #}
+{% from '../tools/blog-macros.html' import related_posts %}
+
+{% require_css %}
+<style>
+{% include '../css/templates/blog.css' %}
+</style>
+{% end_require_css %}
+
+{% block body %}
+<div class="body-container body-container--blog-post">
+
+  {# Blog post #}
+
+  <div class="content-wrapper">
+    <article class="blog-post">
+      <h1>{{ content.name }}</h1>
+      <div class="blog-post__meta">
+        <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" rel="author">
+          {{ content.blog_post_author.display_name }}
+        </a>
+        <time datetime="{{ content.publish_date }}" class="blog-post__timestamp">
+          {{ content.publish_date_localized }}
+        </time>
+      </div>
+      <div class="blog-post__body">
+        {{ content.post_body }}
+      </div>
+      {% if content.tag_list %}
+        <div class="blog-post__tags">
+          {% icon
+            name="tag",
+            purpose="decorative",
+            style="SOLID"
+          %}
+          {% for tag in content.tag_list %}
+            <a class="blog-post__tag-link" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </article>
+    {% if group.allow_comments %}
+      <div class="blog-comments">
+        {% module "blog_comments"
+          path="@hubspot/blog_comments",
+          label="Blog comments"
+        %}
+      </div>
+    {% endif %}
+  </div>
+
+  {# Recent posts listing #}
+  {% related_blog_posts
+    limit=3,
+    no_wrapper=True,
+    post_formatter="related_posts"
+  %}
+
+</div>
+{% endblock body %}

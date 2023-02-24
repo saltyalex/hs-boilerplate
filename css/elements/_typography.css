@@ -1,0 +1,178 @@
+body {
+  color: var(--c-black);
+  font-size: 18px;
+  line-height: 1.65em;
+  word-break: break-word;
+}
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+html[lang^="ja"] body,
+html[lang^="zh"] body,
+html[lang^="ko"] body {
+  line-break: strict;
+  word-break: break-all;
+}
+
+/* Paragraphs */
+
+p {
+  margin: 0 0 2em;
+}
+/* Anchors */
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/* Headings */
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-weight: 700;
+}
+
+h1, .h1 {
+  font-size: 40px;
+  line-height:1.15em;
+  letter-spacing:-0.01em
+}
+
+h2, .h2 {
+  font-size: 32px;
+  line-height: 1.2em;
+  letter-spacing: -0.01em;
+}
+
+h3, .h3 {
+  font-size: 26px;
+  line-height: 1.2em;
+  letter-spacing: -0.01em;
+}
+
+h4, .h4 {
+  font-size: 26px;
+  line-height: 1.3em;
+  letter-spacing: -0.01em;
+  margin-bottom:0.8em;
+}
+h5, .h5 {
+  font-size: 22px;
+  line-height: 1.3em;
+  letter-spacing: -0.01em;
+  margin-bottom:0.6em;
+}
+
+h6, .h6 {
+  font-size: 18px;
+  line-height: 1.3em;
+  letter-spacing: -0.01em;
+  margin-bottom:1em;
+}
+
+.title1 {
+  font-size:42px;
+  line-height:1.05em;
+  letter-spacing: -0.02em;
+}
+.title2 {
+  font-size:36px;
+  line-height:1.05em;
+  letter-spacing: -0.02em;
+}
+
+@media only screen and (min-width:768px) {
+  h1, .h1 {
+    font-size:58px;
+  }
+  h2, .h2 {
+    font-size:42px;
+  }
+  h3, .h3 {
+    font-size:34px;
+  }
+
+  .title1 {
+    font-size:76px;
+  }
+  .title2 {
+    font-size:50px;
+  }
+}
+
+/* Lists */
+
+ul,
+ol {
+  margin: 0 0 2em;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin: 0;
+}
+
+ul.no-list {
+  list-style: none;
+}
+.hs_cos_wrapper_type_inline_rich_text li + li {
+  margin-top:1em;
+}
+.hs_cos_wrapper_type_inline_rich_text ul ul {
+  margin-top:1em;
+}
+
+/* Code blocks */
+
+code {
+  vertical-align: bottom;
+}
+
+/* Blockquotes */
+
+blockquote {
+  border-left: 2px solid var(--c-black);
+  margin: 0 0 1em;
+  padding-left: 1em;
+}
+
+/* Horizontal rules */
+
+hr {
+  background-color: var(--c-black);
+  border: none;
+  color: var(--c-black);
+  height: 1px;
+}
+
+/* Subscripts and superscripts */
+
+sup,
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}

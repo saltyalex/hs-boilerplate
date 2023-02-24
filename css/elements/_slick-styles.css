@@ -1,0 +1,62 @@
+/* Dots Core */
+.dots-circle .slick-dots {
+  display:flex!important;
+  justify-content:center;
+  align-items:center;
+  padding-left:0;
+  margin-bottom:0;
+  list-style-type:none;
+}
+.dots-circle .slick-dots li + li {
+  margin-left:8px;
+}
+.dots-circle .slick-dots li {
+  opacity:0.2;
+  transition:0.2s;
+}
+.dots-circle .slick-dots li.slick-active {
+  opacity:1;
+}
+.dots-circle .slick-dots li::focus,
+.dots-circle .slick-dots li::hover {
+  transform:scale(1.2);
+}
+.dots-circle .slick-dots button {
+  padding:0;
+  font-size:0;
+  width:10px;
+  height:10px;
+}
+
+/* Dots Colors */
+.dots-color__white button {
+  background-color:var(--c-white);
+}
+.dots-color__white.dots-circle .slick-dots li {
+  opacity:0.1;
+}
+.dots-color__white.dots-circle .slick-dots li.slick-active {
+  opacity:0.5;
+}
+.dots-circle .slick-dots li::focus,
+.dots-circle .slick-dots li::hover {
+  opacity:1;
+}
+
+/* Arrows Core */
+button.slick-arrow {
+  background-color:transparent;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
+  margin-top:-20px;
+  width:40px;
+  height:40px;
+  padding:0;
+  font-size:0;
+  position:absolute;
+  z-index:1;
+}
+button.slick-next {
+  transform:rotate(180deg);
+}

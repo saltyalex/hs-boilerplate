@@ -1,0 +1,53 @@
+<!--
+  templateType: global_partial
+  label: Blog Sidebar
+-->
+
+<aside class="sidebar">
+  <!-- Author Info On Author Pages -->
+  {% unless blog_id == 3321434973 %}
+  {{ blog_id }}
+  {% if blog_author %}
+  <div class="sidebar-block hs-author-profile author-block text-center">
+    <h3 class="hs-author-name">{{ blog_author.display_name }}</h3>
+    {% if blog_author.avatar %} <div class="hs-author-avatar vertical-margin-xs"> <img src="{{ blog_author.avatar }}" alt="Picture of {{ blog_author.display_name }}"> </div> {% endif %}
+    <div class="hs-author-bio">{{ blog_author.bio }}</div>
+
+    {% if blog_author.has_social_profiles %}
+    <div class="hs-author-social-section">
+      <span class="hs-author-social-label">Connect With Us:</span>
+      <div class="hs-author-social-links">
+        {% if blog_author.facebook %}
+        <a href="{{ blog_author.facebook }}" target="_blank" class="hs-author-social-link hs-social-facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if blog_author.linkedin %}
+        <a href="{{ blog_author.linkedin }}" target="_blank" class="hs-author-social-link hs-social-linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if blog_author.twitter %}
+        <a href="{{ blog_author.twitter }}" target="_blank" class="hs-author-social-link hs-social-twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if blog_author.google_plus %}
+        <a href="{{ blog_author.google_plus }}?rel=author" target="_blank" class="hs-author-social-link hs-social-google-plus"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% endunless %}
+  <div class="blog-topic-list sidebar-block">
+    <h3>Blog Topics</h3>
+    {% set my_topics = blog_topics(default, 50) %}
+    <ul>
+      {% for item in my_topics|sort(False, False, 'name') %}
+      <li><a href="{{ blog_tag_url(group.id, item.slug) }}">{{ item }}</a></li>
+      {% endfor %}
+
+    </ul>
+  </div>
+
+  <div class="blog-sub sidebar-block hidden-labels">
+    {% blog_subscribe "subscribe_blog" select_blog='', title='Subscribe to the Blog', response_message='Thanks for Subscribing!', label='Blog Email Subscription', overrideable=False %}
+  </div>
+
+</aside>

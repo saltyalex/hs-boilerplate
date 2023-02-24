@@ -1,0 +1,10 @@
+[ {
+  "id" : "4e5973d3-798b-8d9e-8776-2c338e3d7039",
+  "name" : "footer_menu",
+  "display_width" : null,
+  "label" : "Menu",
+  "required" : false,
+  "locked" : false,
+  "type" : "menu",
+  "default" : 33363197151
+} ]

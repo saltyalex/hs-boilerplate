@@ -1,0 +1,447 @@
+[ {
+  "id" : "primary_menu_field",
+  "name" : "primary_menu_field",
+  "display_width" : null,
+  "label" : "Primary menu field",
+  "inline_help_text" : "Do not include submenu items here for the megamenu.",
+  "required" : false,
+  "locked" : false,
+  "type" : "menu"
+}, {
+  "id" : "3b9a0299-0dad-12d5-b749-1e2b1becea28",
+  "name" : "mega_group",
+  "display_width" : null,
+  "label" : "Mega Menu Group",
+  "help_text" : "",
+  "inline_help_text" : "Creates a mega menu group. This automatically corresponds with the items in the menu in order of their creation. ",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "f5d596a3-69e5-c1f1-5525-3372d1114816",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "f5d596a3-69e5-c1f1-5525-3372d1114816",
+    "name" : "organizational_label",
+    "display_width" : null,
+    "label" : "Organizational Label",
+    "help_text" : "This doesn't output anywhere. It's just used to help organize mega menu groups.",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "4cc179d5-52fb-0592-a1b8-a9df36a0f10f",
+    "name" : "wide_item",
+    "display_width" : null,
+    "label" : "Wide Column?",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "a8a4e860-f75f-93e8-51c4-380a8845a788",
+    "name" : "menu_column",
+    "display_width" : null,
+    "label" : "Menu Column",
+    "help_text" : "",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "6183d03f-3098-885a-3b57-238aae881f11",
+      "name" : "content_type",
+      "display_width" : null,
+      "label" : "Content Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "radio",
+      "choices" : [ [ "menu", "Menu" ], [ "blog", "Blog Feed" ], [ "cta", "Rich CTA" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "type" : "choice",
+      "default" : "menu"
+    }, {
+      "id" : "d108dd81-048d-88c0-9113-4b8401d89e29",
+      "name" : "thin_column",
+      "display_width" : null,
+      "label" : "Thin Column?",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "0259af77-dd1b-8926-104a-d8a60ff07361",
+      "name" : "menu_group",
+      "display_width" : null,
+      "label" : "Menu Group",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : "ab2aae73-8ad5-beb6-aa7c-843bdd04f998",
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "ab2aae73-8ad5-beb6-aa7c-843bdd04f998",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+      }, {
+        "id" : "61df3fa3-800a-a56b-7de9-87ecb9caebc6",
+        "name" : "title_link",
+        "display_width" : null,
+        "label" : "Title Link",
+        "required" : false,
+        "locked" : false,
+        "type" : "page"
+      }, {
+        "id" : "ac8e2632-df38-ec63-5eb3-b8f78a33d162",
+        "name" : "two_column_menu",
+        "display_width" : null,
+        "label" : "Two Column Menu?",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "default" : false
+      }, {
+        "id" : "8c3d757b-193f-7a9d-40f4-acdfd5d6a0fd",
+        "name" : "page",
+        "display_width" : null,
+        "label" : "Pages",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : null,
+          "default" : null
+        },
+        "type" : "page"
+      }, {
+        "id" : "f6fc1b61-0f96-7214-8804-251a541913c7",
+        "name" : "pages",
+        "display_width" : null,
+        "label" : "Pages",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "aa727627-43d7-95e3-8466-81d30868b7ab",
+          "default" : null
+        },
+        "children" : [ {
+          "id" : "aa727627-43d7-95e3-8466-81d30868b7ab",
+          "name" : "title",
+          "display_width" : null,
+          "label" : "Title",
+          "required" : false,
+          "locked" : false,
+          "validation_regex" : "",
+          "allow_new_line" : false,
+          "show_emoji_picker" : false,
+          "type" : "text",
+          "default" : "Blah 1"
+        }, {
+          "id" : "386be090-7741-5fa0-cd74-708cf62cb57e",
+          "name" : "blurb",
+          "display_width" : null,
+          "label" : "Blurb",
+          "required" : false,
+          "locked" : false,
+          "validation_regex" : "",
+          "allow_new_line" : false,
+          "show_emoji_picker" : false,
+          "type" : "text",
+          "default" : "Blah 2"
+        }, {
+          "id" : "eb61f5dd-1cc7-2f4c-3b75-bcc21ff960b6",
+          "name" : "third_test",
+          "display_width" : null,
+          "label" : "Image",
+          "required" : false,
+          "locked" : false,
+          "responsive" : true,
+          "resizable" : true,
+          "show_loading" : false,
+          "type" : "image",
+          "default" : {
+            "size_type" : "auto",
+            "src" : "https://www.saltedstone.com/hubfs/domo.jpg",
+            "alt" : "domo",
+            "loading" : "lazy",
+            "width" : 285,
+            "height" : 250,
+            "max_width" : 285,
+            "max_height" : 250
+          }
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "type" : "group",
+        "default" : {
+          "title" : "Blah 1",
+          "blurb" : "Blah 2",
+          "third_test" : {
+            "size_type" : "auto",
+            "src" : "https://www.saltedstone.com/hubfs/domo.jpg",
+            "alt" : "domo",
+            "loading" : "lazy",
+            "width" : 285,
+            "height" : 250,
+            "max_width" : 285,
+            "max_height" : 250
+          }
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "two_column_menu" : false,
+        "pages" : {
+          "title" : "Blah 1",
+          "blurb" : "Blah 2",
+          "third_test" : {
+            "size_type" : "auto",
+            "src" : "https://www.saltedstone.com/hubfs/domo.jpg",
+            "alt" : "domo",
+            "loading" : "lazy",
+            "width" : 285,
+            "height" : 250,
+            "max_width" : 285,
+            "max_height" : 250
+          }
+        }
+      }
+    }, {
+      "id" : "57ec1a12-408d-7b73-8f26-406eb7b594b8",
+      "name" : "menu_blog",
+      "display_width" : null,
+      "label" : "Blog Feed",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "6e782d87-719d-1877-7de4-53bf612e20bd",
+        "name" : "blog_feed",
+        "display_width" : null,
+        "label" : "Blog Feed",
+        "required" : false,
+        "locked" : false,
+        "type" : "blog",
+        "default" : 3289547707
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "blog_feed" : 3289547707
+      }
+    }, {
+      "id" : "be1bc2cd-849d-3f50-7126-b3fae4256269",
+      "name" : "menu_cta",
+      "display_width" : null,
+      "label" : "Rich CTA",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "8341e977-c569-6d09-d41e-556962b68691",
+        "name" : "type",
+        "display_width" : null,
+        "label" : "Label",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+      }, {
+        "id" : "81d6f210-c96a-9436-2091-48097fbeacca",
+        "name" : "image",
+        "display_width" : null,
+        "label" : "Image",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : true,
+        "show_loading" : false,
+        "type" : "image",
+        "default" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null
+        }
+      }, {
+        "id" : "e3de9dd5-8e33-07b2-b497-efacfb9224fc",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+      }, {
+        "id" : "79ef0a8b-3f92-be5c-7e54-79ef6592258e",
+        "name" : "link_text",
+        "display_width" : null,
+        "label" : "Link Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+      }, {
+        "id" : "35949a17-4f6d-d7c2-61d6-e69d79fad387",
+        "name" : "link",
+        "display_width" : null,
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "EMAIL_ADDRESS", "BLOG" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null
+        },
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "content_type" : "menu",
+      "thin_column" : false,
+      "menu_group" : {
+        "two_column_menu" : false,
+        "pages" : {
+          "title" : "Blah 1",
+          "blurb" : "Blah 2",
+          "third_test" : {
+            "size_type" : "auto",
+            "src" : "https://www.saltedstone.com/hubfs/domo.jpg",
+            "alt" : "domo",
+            "loading" : "lazy",
+            "width" : 285,
+            "height" : 250,
+            "max_width" : 285,
+            "max_height" : 250
+          }
+        }
+      },
+      "menu_blog" : {
+        "blog_feed" : 3289547707
+      },
+      "menu_cta" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null
+        },
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "wide_item" : false,
+    "menu_column" : {
+      "content_type" : "menu",
+      "thin_column" : false,
+      "menu_group" : {
+        "two_column_menu" : false,
+        "pages" : {
+          "title" : "Blah 1",
+          "blurb" : "Blah 2",
+          "third_test" : {
+            "size_type" : "auto",
+            "src" : "https://www.saltedstone.com/hubfs/domo.jpg",
+            "alt" : "domo",
+            "loading" : "lazy",
+            "width" : 285,
+            "height" : 250,
+            "max_width" : 285,
+            "max_height" : 250
+          }
+        }
+      },
+      "menu_blog" : {
+        "blog_feed" : 3289547707
+      },
+      "menu_cta" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null
+        },
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }
+  }
+} ]

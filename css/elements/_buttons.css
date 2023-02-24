@@ -1,0 +1,92 @@
+button,
+.button {
+  background:var(--c-black);
+  border-radius:4px;
+  color:var(--c-white);
+  cursor:pointer;
+  display:inline-block;
+  font-size:19px;
+  font-weight:700;
+  height:auto;
+  line-height: 1;
+  margin:0;
+  padding:15px 30px;
+  position:relative;
+  text-align:center;
+  text-decoration:none;
+  transition:all 0.2s linear;
+  touch-action:manipulation;
+  white-space:normal;
+  width:auto;
+  word-break:break-word;
+}
+.button.button__large {
+  padding:22px 30px;
+}
+
+.ripple {
+  position: absolute;
+  background: rgba(255,255,255,.25);
+  border-radius: 100%;
+  transform: scale(0.2);
+  opacity:0;
+  pointer-events: none;
+  -webkit-animation: ripple .55s;
+  -moz-animation: ripple .55s;
+  animation: ripple .55s;
+}
+
+@-webkit-keyframes ripple {
+  from {
+    opacity:1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes ripple {
+  from {
+    opacity:1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  from {
+    opacity:1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Set appropriate values here */
+button {
+  border:none;
+  background: #35AB6D;
+  color: #FFFFFF;
+}
+
+button:disabled {
+  background-color: #D0D0D0;
+  color: #E6E6E6;
+}
+
+button:hover,
+button:focus {
+  background-color: #21222A;
+  color: #FFF;
+  text-decoration: none;
+}
+
+button:active {
+  background-color: #71727A;
+  color: #FFF;
+  text-decoration: none;
+}
