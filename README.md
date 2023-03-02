@@ -69,5 +69,3 @@ There are a few optimizations that must be accounted for. Altering these may neg
  
  - Custom modules have their own specific considerations
  -- Shared component functionality should be included using the "**Linked Files**" panel in the custom module settings. This helps to keep updates and fixes consistent while also separating module-specific overrides to the module CSS/JS. Further overrides on the module level can be accomplished with [scoping](https://developers.hubspot.com/docs/cms/building-blocks/modules/files#require-css-block).
- 
- # Introduction
